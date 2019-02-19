@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Shunsuke's Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <link rel="stylesheet" type="text/css" href="css/colors_and_fonts.css">
+    </head>
+    <body>
+        <header>
+            <h1>Shunsuke Porftolio</h1>
+            <h2>Projects from Shunsuke's programed.</h2>
+            <nav id="sitenav">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Arudino.html">Arduino</a></li>
+					<li><a href="Python.html">Python</a></li>
+					<li><a href="http://www.ict-kanazawa.ac.jp" target="_blank">About ICT</a></li>
+                    
+                </ol>
+            </nav>
+        </header>
+        <div id="main">
+            <article class="content" id="welcome">
+                <h3>This is a Arduino part.</h3>
+                <img src="images/AAAAA.jpeg" size="200" >
+                <p>
+					this page,I will tell,How to use an Arduino,and put template of Arduino program.
+				
+                </p>
+            </article>
+			
+			<article class="content" id="LEDchika">
+                <h3>blinking LEDs</h3>
+                
+                <p>
+					we did blinking LEDs by Arduino.<br>
+					THis is a program.
+				</p>
+				
+				<pre class = "pro" >
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(13,OUTPUT); // 13th pin is output pin.
+  
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(13,HIGH); // 13th pin "ON".
+  delay(100);            // wait 1 second.
+  digitalWrite(13,LOW);  // 13th pin "OFF".
+  delay(100);
+}
+				</pre>
+				
+            </article>
+			
+			<article class="content" id="analogwrite">
+                <h3>Analog write</h3>
+                <img src="Arduino.jpg" >
+                <p>
+					We made a program.
+					that use for function, then We can chenge power little by little.
+				
+                </p>
+				<pre class = "pro">
+int i; // inport "i"
+
+void setup() {
+// put your setup code here, to run once.
+Serial.begin(9600);
+pinMode(9,OUTPUT) //9th pin can analog write.
+
+}
+
+
+void loop() {
+for(i=0,i <=255,i++){     //if i is less than 255,i will increse.
+analogWrite(9,i);      
+delay(5);
+}
+}
+				</pre>
+				
+            </article>
+			
+			 <!--<article class="content" id="welcome">
+                <h3></h3>
+                <img src="images/ICT_School.jpg" alt="[ICT School]">
+                <p>
+					
+                </p>
+            </article>
+			-->
+			<article class="content" id="PWM">
+                <h3>PWM by digitalWrite.</h3>
+                <img src="images/ICT_School.jpg" alt="[ICT School]">
+                <p>
+					Nomaly PWM use analogwrite.
+					This time use digitalwrite.
+                </p>
+            </article>
+			
+            
+			<aside id="sidebar">
+				<h3>Shunsuke Projects</h3>
+				<ol>
+					<li><a href="#welcome">top</a></li>
+					<li><a href="#LEDchika">blinking LEDs</a></li>
+					<li><a href="#analogwrite">Analog write and read</a></li>
+					<li><a href="#DPWM"> PWM by digital write</a></li>
+				</ol>
+			</aside>
+		
+            <footer>
+                <p>Shunsuke is ICT students. 
+                    <a href="http://www.ict-kanazawa.ac.jp">International College of Technology</a> in Kanazawa, Japan.
+                </p>
+            </footer>
+        </div>
+    </body>
+
+</html>
