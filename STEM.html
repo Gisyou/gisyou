@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>STEM</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>HW tasks</h1>
+        <h2>You should do this</h2>
+        <p id = "HoW">
+        </p>
+        
+        
+        <form name = "p2"> <!--choose subject-->
+                <input type="radio" name = "sub" value="微積"> 微積分
+                <input type="radio" name = "sub" value="科学"> 科学
+                <input type="radio" name = "sub" value="生物"> バイオ
+                <input type="radio" name = "sub" value="物理"> 物理
+                <input type="radio" name = "sub" value="LS"> LS
+                <input type="radio" name = "sub" value="AG"> AG
+                <input type="radio" name = "sub" value="RW"> RW
+                <input type="radio" name = "sub" value="ED"> ED
+        </form><br>
+        <input type="text" id = "object">
+        <input type=button value=A onClick=pr()><!--if push this bottun go to line32-->
+
+        <script>
+            var b
+            var HW = []  // homework arry
+
+            function pr(){
+                for(var k = 0; k<document.p2.sub.length-1;k++){ // check to which one checked
+                    if(document.p2.sub[k].checked){
+                        b = document.p2.sub[k].value
+                    }
+                }
+
+                var object = document.getElementById("object").value // what did uesr type?
+                HW.push(b + "  " + object + "<br>")
+                
+                
+                document.getElementById("HoW").innerHTML = ""; // make brank in html.HoW
+                for (var i=0; i<HW.length; i++) {
+                    document.getElementById("HoW").innerHTML += i +":"+ HW[i] + "<input type=button value=Del onClick=del(" + i +")>" + "<br>"; //place homework to html
+                    }
+                
+            }
+
+            
+            function del(j){ // delet homework function
+                HW.splice(j, 1); // delet selcted HW 
+                document.getElementById("HoW").innerHTML = ""; //make brantk in html.HoW
+                for (var i=0; i<HW.length; i++) {
+                    document.getElementById("HoW").innerHTML += i +":"+ HW[i] + "<input type=button value=Del onClick=del(" + i +")>" + "<br>"; //place homework to hrml
+                    }
+            }
+            
+        </script>
+    </body>
+</html>
